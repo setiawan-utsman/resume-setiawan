@@ -1,0 +1,271 @@
+export const DTRESUMEEN = {
+  name: "Yayuk Setiawan",
+  title: "Frontend Developer (React & Angular)",
+  contact: {
+    address:
+      "JL. Kesehatan 04/011, Gedong, Pasar Rebo, East Jakarta, Indonesia",
+    email: "setiawanjob41@gmail.com",
+    phone: "+62 813-1619-2203",
+    github: "https://github.com/setiawan",
+    linkedin: "https://linkedin.com/in/yayuk-setiawan",
+    gitlab: "https://gitlab.com/setiawan",
+  },
+  profile:
+    "Frontend Developer with professional experience since 2018, specializing in React, React Native, Angular, and TypeScript. Skilled in building responsive UI, managing complex state, and integrating RESTful APIs. Experienced in using Bootstrap, Tailwind CSS, and Styled Components. Proven ability to develop real-time dashboards, interactive platforms, and design systems with a strong focus on high performance, accessibility, and maintainability.",
+  education: {
+    university: "Universitas Indraprasta PGRI",
+    degree: "Bachelor's Degree in Computer Engineering",
+    location: "Jakarta, Indonesia",
+    year: "2014 – 2018",
+    gpa: "3.3 / 4.0",
+  },
+  experience: [
+    {
+      position: "Frontend Engineer",
+      company: "PT. Indonesia Indicator",
+      period: "Jan 2018 – Present",
+      responsibilities: [
+        "Develop and maintain modern UI components using React and Angular",
+        "Integrate REST APIs with frontend components for dynamic data visualization",
+        "Optimize application performance and fix bugs to ensure system stability",
+        "Collaborate with QA teams and end-users to identify and resolve production issues",
+        "Implement interactive dashboards using ECharts, Highcharts, and Mapbox",
+        "Convert Figma designs into pixel-perfect, mobile-friendly interfaces",
+        "Apply animations and interactive filters to enhance user experience",
+        "Configure GitLab CI/CD pipelines for automated testing and deployment",
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "Brandlabs",
+      tech: ["React", "ECharts", "Mapbox", "Bootstrap"],
+      details: [
+        "Developed a multi-step onboarding flow with dynamic industry, brand, and role recommendations",
+        "Built goal input forms with real-time validation",
+        "Integrated AI-powered Brandlabs Chat Assistant",
+        "Created responsive dashboards for curated news and social media content",
+        "Implemented CI/CD pipelines via GitLab",
+      ],
+      type: "image",
+      img: "/static/img/brandlabs.png",
+    },
+    {
+      name: "Politica",
+      tech: ["Angular", "Highcharts", "Bootstrap"],
+      details: [
+        "Designed and developed a fully responsive UI for a political analytics platform",
+        "Integrated a running text/news ticker feature for real-time updates",
+        "Built interactive data visualizations and analytical dashboards",
+        "Implemented multi-language support with dynamic language switching",
+        "Managed application state for loading states, error handling, and no-data conditions",
+        "Added light/dark theme switching functionality",
+        "Integrated API services for data retrieval and system synchronization",
+        "Developed account management features with template-based account creation",
+        "Performed regular maintenance to ensure optimal performance",
+      ],
+      type: "carousel",
+      img: [
+        "/static/img/p1.jpg",
+        "/static/img/p2.jpg",
+        "/static/img/p3.jpg",
+        "/static/img/p4.jpg",
+        "/static/img/p5.jpg",
+        "/static/img/p6.jpg",
+      ],
+    },
+    {
+      name: "PWPL (Puspitaloka.com) – Housing Promotion Platform",
+      tech: ["Angular", "Bootstrap"],
+      details: [
+        "Developed an admin panel to manage housing ads, banners, and promotional content",
+        "Built a CMS for property listings and marketing materials",
+        "Implemented role-based account management",
+      ],
+      type: "video",
+      img: "/static/img/pwpl.mp4",
+      url: "https://puspitaloka.com/",
+    },
+    {
+      name: "Skill Test – NodeWave Front End",
+      tech: ["React", "Tailwind CSS", "Zustand", "Axios"],
+      details: [
+        "Implemented login and registration functionality",
+        "Developed CRUD features for Todo tasks (add, mark as done, unmark, delete)",
+        "Added filtering for Todo items based on status",
+        "Integrated API for data fetching and persistence",
+      ],
+      type: "carousel",
+      img: ["/static/img/n1.jpg", "/static/img/n2.jpg"],
+      url: "https://github.com/setiawan-utsman/nodewave",
+    },
+  ],
+  technologies: {
+    languages: ["JavaScript", "TypeScript", "HTML", "SCSS"],
+    frameworks: [
+      "React",
+      "React Native",
+      "Angular",
+      "Bootstrap",
+      "Tailwind CSS",
+    ],
+    tools: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "VS Code",
+      "Postman",
+      "Figma",
+      "Mapbox",
+      "Highcharts",
+      "ECharts",
+    ],
+  },
+  languages: [
+    {
+      language: "Indonesian",
+      level: "Native",
+    },
+    {
+      language: "English",
+      level: "Basic",
+    },
+  ],
+};
+
+
+
+export const DTRESUMEID = {
+  name: "Yayuk Setiawan",
+  title: "Frontend Developer (React & Angular)",
+  contact: {
+    address:
+      "JL. Kesehatan 04/011, Kel. Gedong, Kec. Pasar Rebo, Jakarta Timur",
+    email: "setiawanjob41@gmail.com",
+    phone: "081316192203",
+    github: "https://github.com/setiawan",
+    linkedin: "https://linkedin.com/in/yayuk-setiawan",
+    gitlab: "https://gitlab.com/setiawan",
+  },
+  profile:
+    "Frontend Developer berpengalaman sejak 2018 mengunakan React, React Native, Angular, dan TypeScript. Terampil membangun UI responsif, mengelola state kompleks, dan mengintegrasikan RESTful API. Berpengalaman menggunakan Bootstrap, Tailwind CSS, dan Styled Components. Terbukti mampu mengembangkan dashboard real-time, platform interaktif, dan sistem desain dengan fokus pada performa tinggi, aksesibilitas, dan kemudahan pemeliharaan.",
+  education: {
+    university: "Universitas Indraprasta PGRI",
+    degree: "Sarjana Teknik Komputer",
+    location: "Jakarta",
+    year: "2014 – 2018",
+    gpa: "3.3 / 4.0",
+  },
+  experience: [
+    {
+      position: "Frontend Engineer",
+      company: "PT. Indonesia Indicator",
+      period: "Jan 2018 – Sekarang",
+      responsibilities: [
+        "Mengembangkan dan memelihara komponen UI modern menggunakan React dan Angular",
+        "Mengintegrasikan REST API dengan komponen frontend untuk visualisasi data dinamis",
+        "Mengoptimalkan performa aplikasi dan memperbaiki bug untuk memastikan stabilitas sistem",
+        "Berkolaborasi dengan tim QA dan end-user untuk menemukan serta menyelesaikan isu produksi",
+        "Mengimplementasikan dashboard interaktif menggunakan ECharts, Highcharts, dan Mapbox",
+        "Mengonversi desain Figma menjadi antarmuka pixel-perfect dan mobile-friendly",
+        "Menerapkan animasi dan filter interaktif untuk meningkatkan pengalaman pengguna",
+        "Mengonfigurasi GitLab CI/CD untuk otomatisasi pengujian dan deployment",
+      ],
+    },
+  ],
+  projects: [
+    {
+      name: "Brandlabs",
+      tech: ["React", "ECharts", "Mapbox", "Bootstrap"],
+      details: [
+        "Mengembangkan alur onboarding multi-tahap dengan rekomendasi industri, merek, dan peran yang dinamis",
+        "Membangun form input tujuan dengan validasi real-time",
+        "Mengintegrasikan asisten chat berbasis AI Brandlabs",
+        "Mendesain dashboard responsif untuk berita dan media sosial terkurasi",
+        "Mengimplementasikan CI/CD melalui GitLab",
+      ],
+      type: "image",
+      img: "/static/img/brandlabs.png",
+    },
+    {
+      name: "Politica",
+      tech: ["Angular", "Highcharts", "Bootstrap"],
+      details: [
+        "Merancang dan mengembangkan UI responsif untuk platform analisis politik",
+        "Mengintegrasikan fitur teks berjalan (news ticker) untuk update real-time",
+        "Membangun visualisasi data interaktif dan dashboard analitik",
+        "Mengimplementasikan multi-bahasa dengan penggantian bahasa secara dinamis",
+        "Mengelola state aplikasi untuk loading state, error handling, dan kondisi tanpa data",
+        "Menambahkan dukungan tema terang/gelap (light/dark theme)",
+        "Mengintegrasikan layanan API untuk pengambilan data dan sinkronisasi sistem",
+        "Mengembangkan fitur manajemen akun dengan pembuatan akun berdasarkan template menu",
+        "Melakukan pemeliharaan rutin untuk memastikan kinerja optimal",
+      ],
+      type: "carousel",
+      img: [
+        "/static/img/p1.jpg",
+        "/static/img/p2.jpg",
+        "/static/img/p3.jpg",
+        "/static/img/p4.jpg",
+        "/static/img/p5.jpg",
+        "/static/img/p6.jpg",
+      ],
+    },
+    {
+      name: "PWPL (Puspitaloka.com) – Platform Promosi Perumahan",
+      tech: ["Angular", "Bootstrap"],
+      details: [
+        "Mengembangkan panel admin untuk mengelola iklan, banner, dan konten promosi",
+        "Membangun CMS untuk daftar properti dan materi pemasaran",
+        "Mengimplementasikan manajemen akun berbasis peran",
+      ],
+      type: "video",
+      img: "/static/img/pwpl.mp4",
+      url: "https://puspitaloka.com/",
+    },
+    {
+      name: "Skill Test – NodeWave Front End",
+      tech: ["React", "Tailwind CSS", "Zustand", "Axios"],
+      details: [
+        "Membuat fitur login dan registrasi",
+        "Mengembangkan fitur CRUD Todo (tambah, tandai selesai, batalkan, hapus)",
+        "Mengimplementasikan filter Todo berdasarkan status",
+        "Mengintegrasikan API untuk pengambilan dan penyimpanan data",
+      ],
+      type: "carousel",
+      img: ["/static/img/n1.jpg", "/static/img/n2.jpg"],
+      url: "https://github.com/setiawan-utsman/nodewave",
+    },
+  ],
+  technologies: {
+    languages: ["JavaScript", "TypeScript", "HTML", "SCSS"],
+    frameworks: [
+      "React",
+      "React Native",
+      "Angular",
+      "Bootstrap",
+      "Tailwind CSS",
+    ],
+    tools: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "VS Code",
+      "Postman",
+      "Figma",
+      "Mapbox",
+      "Highcharts",
+      "ECharts",
+    ],
+  },
+  languages: [
+    {
+      language: "Bahasa Indonesia",
+      level: "Native",
+    },
+    {
+      language: "Bahasa Inggris",
+      level: "Dasar",
+    },
+  ],
+};
