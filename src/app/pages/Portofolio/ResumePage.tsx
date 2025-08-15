@@ -19,7 +19,7 @@ export interface IDatas {
   contact: Contact;
   profile: string;
   education: Education;
-  experience: Experience[];
+  experience: Experience;
   projects: Project[];
   technologies: Technologies;
   languages: Language[];
@@ -47,6 +47,7 @@ export interface Experience {
   company: string;
   period: string;
   responsibilities: string[];
+  work: string;
 }
 
 export interface Project {
@@ -81,10 +82,10 @@ export default function ResumePage() {
   const [activeMenu, setActiveMenu] = useState<string>("About");
   const MENU = [
     "About",
-    "Contact",
-    "Skills",
     "Experience",
     "Projects",
+    "Technology",
+    "Contact",
     "Education",
   ];
 
@@ -283,123 +284,6 @@ export default function ResumePage() {
                 </div>
               </section>
               <section
-                id="Contact"
-                className="flex flex-col gap-2 animate-appear text-[#101518] dark:text-white"
-              >
-                <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">
-                  {t("Contact Information")}
-                </h2>
-                <p className="text-base font-normal leading-normal">
-                  {datas.contact.address}
-                </p>
-                <p className="text-base font-normal leading-normal">
-                  {datas.contact.email}
-                </p>
-                <p className="text-base font-normal leading-normal">
-                  {datas.contact.phone}
-                </p>
-                <div className="flex flex-wrap justify-start mt-2 gap-2">
-                  <div
-                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
-                    onClick={() => openNewTab(datas.contact.github)}
-                  >
-                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
-                      <GitHubIcon />
-                    </div>
-                    <div className="text-sm font-normal leading-normal">
-                      GitHub
-                    </div>
-                  </div>
-                  <div
-                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
-                    onClick={() => openNewTab(datas.contact.linkedin)}
-                  >
-                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
-                      <LinkedIcon />
-                    </div>
-                    <div className="text-sm font-normal leading-normal">
-                      LinkedIn
-                    </div>
-                  </div>
-                  <div
-                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
-                    onClick={() => openNewTab(datas.contact.gitlab)}
-                  >
-                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
-                      <GitLabIcon />
-                    </div>
-                    <div className="text-sm font-normal leading-normal">
-                      GitLab
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section
-                id="Skills"
-                className="flex flex-col gap-4 animate-appear dark:text-white text-[#101518]"
-              >
-                <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] pt-5">
-                  {t("Skills")}
-                </h2>
-                <div className="flex flex-col gap-3">
-                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                    {t("Languages")}
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
-                    {datas?.technologies?.languages?.map(
-                      (item: any, index: number) => (
-                        <div
-                          key={index}
-                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
-                        >
-                          <p className="text-sm font-medium leading-normal">
-                            {item}
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-3 dark:text-white text-[#101518]">
-                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                    {t("Framework")}
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-8 gap-2">
-                    {datas?.technologies?.frameworks?.map(
-                      (item: any, index: number) => (
-                        <div
-                          key={index}
-                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
-                        >
-                          <p className="text-sm font-medium leading-3">
-                            {item}
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
-                <div className="flex flex-col gap-3 dark:text-white text-[#0d151c]">
-                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                    {t("Tools")}
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
-                    {datas?.technologies?.tools?.map(
-                      (item: any, index: number) => (
-                        <div
-                          key={index}
-                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
-                        >
-                          <p className="text-sm font-medium leading-3">
-                            {item}
-                          </p>
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
-              </section>
-              <section
                 id="Experience"
                 className="flex flex-col gap-4 animate-appear dark:text-white text-[#101518]"
               >
@@ -410,28 +294,25 @@ export default function ResumePage() {
                   <div className="flex flex-1 flex-col justify-center gap-3">
                     <div className="flex flex-1 flex-col justify-center">
                       <p className="text-base font-medium leading-normal">
-                        Frontend Engineer {t("at")} PT. Indonesia Indicator
+                        {datas?.experience?.position} {t("at")} {datas?.experience?.company}
                       </p>
+                      <p className="text-sm font-normal leading-normal">{datas?.experience?.work}</p>
                       <p className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]">
                         Jan 2018 – Present
                       </p>
                     </div>
 
                     <ul className="list-disc ml-5">
-                      {datas?.experience?.map((item: any, index: number) => (
-                        <React.Fragment key={index}>
-                          {item?.responsibilities?.map(
-                            (item: any, index: number) => (
-                              <li
-                                className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]"
-                                key={index}
-                              >
-                                {item}
-                              </li>
-                            )
-                          )}
-                        </React.Fragment>
-                      ))}
+                      {datas?.experience?.responsibilities?.map(
+                        (item: any, index: number) => (
+                                <li
+                                  className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]"
+                                  key={index}
+                                >
+                                  {item}
+                                </li>
+                              )
+                        )}
                     </ul>
                   </div>
                 </div>
@@ -495,6 +376,123 @@ export default function ResumePage() {
                       </div>
                     </React.Fragment>
                   ))}
+                </div>
+              </section>
+              <section
+                id="Technology"
+                className="flex flex-col gap-4 animate-appear dark:text-white text-[#101518]"
+              >
+                <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] pt-5">
+                  {t("Technology")}
+                </h2>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
+                    {t("Languages")}
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
+                    {datas?.technologies?.languages?.map(
+                      (item: any, index: number) => (
+                        <div
+                          key={index}
+                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
+                        >
+                          <p className="text-sm font-medium leading-normal">
+                            {item}
+                          </p>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 dark:text-white text-[#101518]">
+                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
+                    {t("Framework")}
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-8 gap-2">
+                    {datas?.technologies?.frameworks?.map(
+                      (item: any, index: number) => (
+                        <div
+                          key={index}
+                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
+                        >
+                          <p className="text-sm font-medium leading-3">
+                            {item}
+                          </p>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-3 dark:text-white text-[#0d151c]">
+                  <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
+                    {t("Tools")}
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
+                    {datas?.technologies?.tools?.map(
+                      (item: any, index: number) => (
+                        <div
+                          key={index}
+                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
+                        >
+                          <p className="text-sm font-medium leading-3">
+                            {item}
+                          </p>
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
+              </section>
+              <section
+                id="Contact"
+                className="flex flex-col gap-2 animate-appear text-[#101518] dark:text-white"
+              >
+                <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">
+                  {t("Contact Information")}
+                </h2>
+                <p className="text-base font-normal leading-normal">
+                  {datas.contact.address}
+                </p>
+                <p className="text-base font-normal leading-normal">
+                  {datas.contact.email}
+                </p>
+                <p className="text-base font-normal leading-normal">
+                  {datas.contact.phone}
+                </p>
+                <div className="flex flex-wrap justify-start mt-2 gap-2">
+                  <div
+                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
+                    onClick={() => openNewTab(datas.contact.github)}
+                  >
+                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
+                      <GitHubIcon />
+                    </div>
+                    <div className="text-sm font-normal leading-normal">
+                      GitHub
+                    </div>
+                  </div>
+                  <div
+                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
+                    onClick={() => openNewTab(datas.contact.linkedin)}
+                  >
+                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
+                      <LinkedIcon />
+                    </div>
+                    <div className="text-sm font-normal leading-normal">
+                      LinkedIn
+                    </div>
+                  </div>
+                  <div
+                    className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600"
+                    onClick={() => openNewTab(datas.contact.gitlab)}
+                  >
+                    <div className="transition-transform rounded-full bg-[#eaedf1] p-2.5 hover:skew-y-6 hover:bg-red-50 hover:ease-linear dark:bg-slate-700">
+                      <GitLabIcon />
+                    </div>
+                    <div className="text-sm font-normal leading-normal">
+                      GitLab
+                    </div>
+                  </div>
                 </div>
               </section>
               <section
