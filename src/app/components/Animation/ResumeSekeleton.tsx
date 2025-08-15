@@ -29,78 +29,12 @@ export default function ResumeSekeleton() {
               </button>
             </div>
           </section>
-          <section className="flex flex-col gap-2 animate-pulse">
-            <h2 className="text-[#101518] text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 bg-slate-300 h-5 w-1/5 rounded-md"></h2>
-            <p className="text-[#101518] text-base font-normal leading-normal h-5 w-1/3 bg-slate-300 rounded-md"></p>
-            <p className="text-[#101518] text-base font-normal leading-normal h-5 w-2/3 bg-slate-300 rounded-md"></p>
-            <p className="text-[#101518] text-base font-normal leading-normal h-5 w-1/3 bg-slate-300 rounded-md"></p>
-            <div className="flex flex-wrap justify-start mt-2 gap-2">
-              <div className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600">
-                <div className="rounded-full bg-slate-300 h-9 w-9">
-                  {/* <GitHubIcon /> */}
-                </div>
-                <div className="text-sm font-normal leading-normal">GitHub</div>
-              </div>
-              <div className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600">
-                <div className="rounded-full bg-slate-300 h-9 w-9">
-                  {/* <LinkedIcon />/ */}
-                </div>
-                <div className="text-sm font-normal leading-normal">
-                  LinkedIn
-                </div>
-              </div>
-              <div className="flex flex-col items-center w-20 gap-2 cursor-pointer hover:text-2xl hover:text-red-600">
-                <div className="rounded-full bg-slate-300 h-9 w-9">
-                  {/* <GitLabIcon /> */}
-                </div>
-                <div className="text-sm font-normal leading-normal">GitLab</div>
-              </div>
-            </div>
-          </section>
-          <section className="flex flex-col gap-4 animate-pulse">
-            <h2 className="text-[#101518] text-[22px] font-bold leading-tight tracking-[-0.015em] pt-5">
-              {t('Skills')}
-            </h2>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                {t('Languages')}
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
-                {[1, 2, 3, 4]?.map((item: any, index: number) => (
-                  <div
-                    key={index}
-                    className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-slate-300 w-full"
-                  ></div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                {t('Framework')}
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-8 gap-2">
-                {[1, 2, 3, 4, 5, 6]?.map((item: any, index: number) => (
-                  <div
-                    key={index}
-                    className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-slate-300 w-full"
-                  ></div>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h3 className="text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
-                {t('Tools')}
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-9 gap-2">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9]?.map(
-                  (item: any, index: number) => (
-                    <div
-                      key={index}
-                      className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-slate-300 w-full"
-                    ></div>
-                  )
-                )}
-              </div>
+          <section
+            id="Experience"
+            className="flex flex-col gap-4 dark:text-white text-[#101518] animate-pulse"
+          >
+            <div className="bg-slate-300 h-5 w-2/4 rounded-md"></div>
+            <div className="flex gap-4 bg-slate-50 px-4 py-3 hover:shadow-xl dark:bg-slate-700 rounded-md h-96 w-100">
             </div>
           </section>
         </div>

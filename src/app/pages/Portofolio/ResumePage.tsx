@@ -12,6 +12,11 @@ import MoonIcon from "../../assets/icons/MoonIcon";
 import LaguangeIcon from "../../assets/icons/LaguangeIcon";
 import { useTranslation } from "react-i18next";
 import ImgVideo from "../../components/ImgVideo";
+import { AnimatedBackground } from "../../motion/animated-background";
+import { TextEffect } from "../../motion/text-effect";
+import { AnimatePresence } from "motion/dist/react";
+// import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
+// import { AnimatedBackground } from "@/components/core/animated-background";
 
 export interface IDatas {
   name: string;
@@ -170,7 +175,7 @@ export default function ResumePage() {
               : ""
           }`}
         >
-          <div className="max-w-[960px] w-full  2xl:container container md:container sm:container mx-auto flex items-center justify-between whitespace-nowrap md:px-0 xs:px-5 py-3 relative">
+          <div className="max-w-[960px] w-full 2xl:container container md:container sm:container mx-auto flex items-center justify-between whitespace-nowrap md:px-0 xs:px-5 py-3 relative">
             <div className="flex items-center gap-2 hover:cursor-pointer hover:text-cyan-600">
               <div className=" rounded-lg p-0.5 border-1 border-cyan-400 bg-cyan-50 text-cyan-600 skew-y-3 dark:bg-cyan-400 dark:text-cyan-900">
                 <LogoIcon />
@@ -178,22 +183,33 @@ export default function ResumePage() {
               <div className="text-xl font-semibold font-serif">Portofolio</div>
             </div>
             <div className="flex flex-1 justify-end gap-9">
-              <div className="flex items-center gap-9 md:flex xs:hidden">
-                {MENU.map((item) => (
-                  <div
-                    key={item}
-                    className={`hover:cursor-pointer hover:text-cyan-600 capitalize active:text-cyan-600
+              <div className="flex items-center gap-2 md:flex xs:hidden">
+                <AnimatedBackground
+                  // defaultValue={activeMenu}
+                  className="rounded-lg bg-gray-100 dark:bg-slate-800"
+                  transition={{
+                    type: "spring",
+                    bounce: 0.2,
+                    duration: 0.3,
+                  }}
+                  enableHover
+                >
+                  {MENU.map((item, index) => (
+                    <div
+                      data-id={item}
+                      key={index}
+                      className={`hover:cursor-pointer capitalize active:text-cyan-600 hover:text-cyan-600 px-3 py-2
                       ${
                         activeMenu === item
-                          ? "text-cyan-600 font-semibold duration-150 ease-linear"
+                          ? "text-cyan-600 font-semibold duration-150 ease-linear bg-cyan-100 dark:bg-slate-800 rounded-lg"
                           : ""
                       }`}
-                    // className={`hover:cursor-pointer hover:text-cyan-600 capitalize active:text-cyan-600 ${activeMenu === item ? "text-cyan-600" : ""}`}
-                    onClick={() => handleScroll(item)}
-                  >
-                    {t(item)}
-                  </div>
-                ))}
+                      onClick={() => handleScroll(item)}
+                    >
+                      {t(item)}
+                    </div>
+                  ))}
+                </AnimatedBackground>
               </div>
               <div className="flex items-center gap-2">
                 <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-2 bg-[#eaedf1] text-[#101518] text-sm font-bold leading-normal tracking-[0.015em]">
@@ -252,7 +268,7 @@ export default function ResumePage() {
         {loading ? (
           <ResumeSekeleton />
         ) : (
-          <div className="container mx-auto w-full lg:max-w-[1024px] md:max-w-[720px] xs:max-w-[385px] mb-5">
+          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] xs:max-w-[320px] mb-5">
             <div className="flex flex-col">
               <section
                 id="About"
@@ -270,9 +286,21 @@ export default function ResumePage() {
                     <div className="relative md:text-4xl xs:text-2xl font-bold animate-typing overflow-hidden whitespace-nowrap border-r-white">
                       {t("hello")} {datas.name}
                     </div>
-                    <h2 className="text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal animate-appear">
-                      {datas.profile}
-                    </h2>
+                    {/* <h2 className=""> */}
+                    {/* <AnimatePresence mode="wait"> */}
+                      <TextEffect
+                      key={datas.profile}
+                        per="char"
+                        preset="fade"
+                        onAnimationComplete={() => {}}
+                        speedReveal={2}
+                        className="text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal animate-appear"
+                      >
+                        {datas.profile}
+                      </TextEffect>
+                    {/* </AnimatePresence> */}
+
+                    {/* </h2> */}
                   </div>
                   <button
                     className="flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#dce8f3] dark:bg-slate-700 dark:text-white text-[#101518] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] w-[max-content]
@@ -294,9 +322,12 @@ export default function ResumePage() {
                   <div className="flex flex-1 flex-col justify-center gap-3">
                     <div className="flex flex-1 flex-col justify-center">
                       <p className="text-base font-medium leading-normal">
-                        {datas?.experience?.position} {t("at")} {datas?.experience?.company}
+                        {datas?.experience?.position} {t("at")}{" "}
+                        {datas?.experience?.company}
                       </p>
-                      <p className="text-sm font-normal leading-normal">{datas?.experience?.work}</p>
+                      <p className="text-sm font-normal leading-normal">
+                        {datas?.experience?.work}
+                      </p>
                       <p className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]">
                         Jan 2018 – Present
                       </p>
@@ -305,14 +336,14 @@ export default function ResumePage() {
                     <ul className="list-disc ml-5">
                       {datas?.experience?.responsibilities?.map(
                         (item: any, index: number) => (
-                                <li
-                                  className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]"
-                                  key={index}
-                                >
-                                  {item}
-                                </li>
-                              )
-                        )}
+                          <li
+                            className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]"
+                            key={index}
+                          >
+                            {item}
+                          </li>
+                        )
+                      )}
                     </ul>
                   </div>
                 </div>
