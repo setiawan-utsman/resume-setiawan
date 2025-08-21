@@ -129,7 +129,7 @@ export const DTRESUMEEN = {
       type: "video",
       img: "/static/img/mobile.mp4",
       textBtn: "Download APK",
-      url: "/https://github.com/setiawan-utsman/resume-setiawan/releases/download/m-resume/app-release.apk",
+      url: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/m-resume/app-release.apk",
       typeUrl: "apk",
     },
   ],
