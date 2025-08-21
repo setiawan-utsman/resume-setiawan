@@ -144,6 +144,7 @@ export default function ResumePage() {
       if (typeUrl === "website")
         window.open(_url, "_blank", "noopener,noreferrer");
       else {
+        // window.open(_url);
         const link = document.createElement("a");
         link.href = _url; // lokasi file di public/
         link.download = "m-resume.apk"; // nama file saat di-download
