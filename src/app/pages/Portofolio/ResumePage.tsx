@@ -291,7 +291,7 @@ export default function ResumePage() {
         {loading ? (
           <ResumeSekeleton />
         ) : (
-          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[410px] mb-5">
+          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[385px] mb-5">
             <div className="flex flex-col">
               <section
                 id="About"
