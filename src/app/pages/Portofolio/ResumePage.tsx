@@ -15,6 +15,8 @@ import ImgVideo from "../../components/ImgVideo";
 import { AnimatedBackground } from "../../motion/animated-background";
 import { TextEffect } from "../../motion/text-effect";
 import { AnimatePresence } from "motion/dist/react";
+import { Slide, toast, ToastContainer } from "react-toastify";
+import ZoomIcon from "../../assets/icons/ZoomIcon";
 // import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
 // import { AnimatedBackground } from "@/components/core/animated-background";
 
@@ -62,6 +64,7 @@ export interface Project {
   type: string;
   img?: any;
   video?: string;
+  textBtn?: string;
 }
 
 export interface Technologies {
@@ -94,9 +97,10 @@ export default function ResumePage() {
     "Education",
   ];
 
-  // const handleOpenModal = ({ data, display }: any) => {
-  //   setOpenModal({ isOpen: true, layout: display, data: data });
-  // };
+  const handleOpenModal = (data:any) => {
+    console.log(data, 'fijsdigfsidfhgsdf');
+    setOpenModal({ isOpen: true, data: data });
+  };
 
   const handleCloseModal = () => {
     setOpenModal({ isOpen: false });
@@ -134,7 +138,27 @@ export default function ResumePage() {
   };
 
   const openNewTab = (url: any) => {
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
+    const _url = url?.url;
+    const typeUrl = url?.typeUrl;
+    if (_url) {
+      if (typeUrl === "website")
+        window.open(_url, "_blank", "noopener,noreferrer");
+      else {
+        const link = document.createElement("a");
+        link.href = _url; // lokasi file di public/
+        link.download = "m-resume.apk"; // nama file saat di-download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    } else {
+      toast.error(t("error new tab"), {
+        hideProgressBar: true,
+        transition: Slide,
+        autoClose: 2000,
+      });
+      // openModal({ isOpen: true, layout: "download", data: url });
+    }
   };
 
   useEffect(() => {
@@ -154,21 +178,21 @@ export default function ResumePage() {
     }, 2000);
   }, []);
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const top = window.scrollY < 50;
-        setIsScrolled(!top);
-      };
+  useEffect(() => {
+    const handleScroll = () => {
+      const top = window.scrollY < 50;
+      setIsScrolled(!top);
+    };
 
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <div className="relative min-h-screen overflow-x-hidden size-full md:size-auto bg-white dark:bg-slate-800 dark:text-white">
         <header
-          className={`w-full fixed z-10 top-0 left-0 right-0 border-b border-solid border-b-[#eaedf1] bg-white dark:bg-slate-900 dark:border-b-[#2b2b2c]
+          className={`w-full fixed z-20 top-0 left-0 right-0 border-b border-solid border-b-[#eaedf1] bg-white dark:bg-slate-900 dark:border-b-[#2b2b2c]
           ${
             isScrolled
               ? "bg-slate-50 dark:bg-slate-900 opacity-95 shadow-sm ease-linear duration-300"
@@ -265,10 +289,11 @@ export default function ResumePage() {
           </div>
         </header>
         {/* ---- Content ---- */}
+
         {loading ? (
           <ResumeSekeleton />
         ) : (
-          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] xs:max-w-[320px] mb-5">
+          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[410px] mb-5">
             <div className="flex flex-col">
               <section
                 id="About"
@@ -288,16 +313,16 @@ export default function ResumePage() {
                     </div>
                     {/* <h2 className=""> */}
                     {/* <AnimatePresence mode="wait"> */}
-                      <TextEffect
+                    <TextEffect
                       key={datas.profile}
-                        per="char"
-                        preset="fade"
-                        onAnimationComplete={() => {}}
-                        speedReveal={2}
-                        className="text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal animate-appear"
-                      >
-                        {datas.profile}
-                      </TextEffect>
+                      per="char"
+                      preset="fade"
+                      onAnimationComplete={() => {}}
+                      speedReveal={2}
+                      className="text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal animate-appear"
+                    >
+                      {datas.profile}
+                    </TextEffect>
                     {/* </AnimatePresence> */}
 
                     {/* </h2> */}
@@ -377,6 +402,11 @@ export default function ResumePage() {
                                 )}
                               </p>
                             </div>
+                            {item?.desc && (
+                              <div className="text-sm font-normal leading-normal">
+                                {item?.desc}
+                              </div>
+                            )}
                             <ul className="list-disc ml-5">
                               {item?.details?.map(
                                 (item: any, index: number) => (
@@ -394,16 +424,24 @@ export default function ResumePage() {
                           <button
                             className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-8 px-4 flex-row-reverse bg-[#e7edf4] text-[#0d151c] text-sm font-medium leading-normal w-fit dark:bg-slate-700 dark:text-white dark:hover:bg-slate-600
                           hover:bg-[#83baed] hover:text-white animate hover:ease-in-out hover:duration-300 hover:shadow-md"
-                            onClick={() => openNewTab(item?.url)}
+                            onClick={() => openNewTab(item)}
                           >
-                            <span className="truncate">
-                              {t("View Website")}
-                            </span>
+                            <span className="truncate">{t(item?.textBtn)}</span>
                           </button>
                         </div>
                       </div>
-                      <div className="w-full aspect-video bg-cover rounded-xl flex-1 h-full relative">
+                      {/* <div className="w-full aspect-video bg-cover rounded-xl flex-1 h-full relative">
                         <ImgVideo type={item?.type} image={item?.img} />
+                        <div className="absolute bottom-3 right-3">sdadsd</div>
+                      </div> */}
+                      <div className="w-full aspect-video bg-cover rounded-xl flex-1 h-full relative group overflow-hidden">
+                        <ImgVideo type={item?.type} image={item?.img} />
+
+                        {/* Hover effect */}
+                        <div
+                          className="absolute inset-0 bg-slate-800/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10 dark:bg-slate-800/60">
+                          <div className="text-white hover:cursor-pointer" onClick={() => handleOpenModal(item)}><ZoomIcon /></div>
+                        </div>
                       </div>
                     </React.Fragment>
                   ))}
@@ -566,13 +604,14 @@ export default function ResumePage() {
       </div>
 
       {/* ---- Modal Details */}
-      {/* <ModalDetail
+      <ModalDetail
         isOpen={openModal?.isOpen}
         onClose={handleCloseModal}
         data={openModal?.data}
         layout={openModal?.layout}
-      /> */}
+      />
       {/* --- End Modal Details */}
+      <ToastContainer />
     </>
   );
 }

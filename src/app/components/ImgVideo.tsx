@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, EffectCards, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y, EffectCards, Autoplay, EffectCreative } from "swiper/modules";
 
 interface IImgVideo {
  type: string
@@ -8,6 +8,9 @@ interface IImgVideo {
 }
 
 export default function ImgVideo({ type, image }: IImgVideo) {
+  console.log(type);
+  console.log(image);
+  
   const preView = useMemo(() => {
       switch (type) {
         case 'image':
@@ -81,28 +84,45 @@ export default function ImgVideo({ type, image }: IImgVideo) {
         break;
       case "video":
         return (
-          <video
-            className="object-cover rounded-xl h-full"
-            src={image}
-            autoPlay
-            loop
-            muted
-          />
+          <div className="flex items-center justify-center w-full h-full">
+            <video
+              className="object-cover rounded-xl h-full"
+              src={image}
+              autoPlay
+              loop
+              muted
+            />
+          </div>
         );
         break;
       case "carousel":
         return (
-          <div className="h-full">
+          // <div className="h-full">
             <Swiper
               className="mySwiper h-full"
-              effect={"cards"}
-              grabCursor={true}
-              // loop={true}
+              // effect={""}
+              // grabCursor={true}
+              // // loop={true}
+              // autoplay={{
+              //   delay: 2500,
+              //   disableOnInteraction: false,
+              // }}
+              // modules={[Autoplay]}
+              effect={"creative"}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
               }}
-              modules={[EffectCards, Autoplay]}
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  translate: [0, 0, -400],
+                },
+                next: {
+                  translate: ["100%", 0, 0],
+                },
+              }}
+              modules={[EffectCreative, Autoplay]}
             >
               {image?.map((item: string, index: number) => (
                 <SwiperSlide>
@@ -119,7 +139,7 @@ export default function ImgVideo({ type, image }: IImgVideo) {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          // {/* </div> */}
         );
         break;
       default:

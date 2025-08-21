@@ -58,6 +58,8 @@ export const DTRESUMEEN = {
         "/static/img/b1.jpg",
         "/static/img/b2.jpg",
       ],
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "Politica",
@@ -80,6 +82,8 @@ export const DTRESUMEEN = {
         "/static/img/p5.jpg",
         "/static/img/p6.jpg",
       ],
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "PWPL (Puspitaloka.com) – Freelance",
@@ -94,6 +98,8 @@ export const DTRESUMEEN = {
       type: "video",
       img: "/static/img/pwpl.mp4",
       url: "https://puspitaloka.com/",
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "NodeWave Front End - Freelance",
@@ -107,6 +113,24 @@ export const DTRESUMEEN = {
       type: "carousel",
       img: ["/static/img/n1.jpg", "/static/img/n2.jpg"],
       url: "https://github.com/setiawan-utsman/nodewave",
+      textBtn: "View Website",
+      typeUrl: "website",
+    },
+    {
+      name: "M-Resume",
+      desc: "I don’t yet have direct professional experience in React Native projects. Currently, the React Native application I am developing is still in progress. I am also highly interested in pursuing a career as a mobile developer and am very open to any opportunities.",
+      tech: ["React Native", "React Native Paper", "Android Studio", "Axios"],
+      details: [
+        "Implementing routing for page navigation",
+        "Translating designs from Figma into React Native while ensuring the design remains dynamic and responsive across various Android devices",
+        "Integrating the application with REST API",
+        "Building a bottom tab navigation menu",
+      ],
+      type: "video",
+      img: "/static/img/mobile.mp4",
+      textBtn: "Download APK",
+      url: "/static/apk/app-release.apk",
+      typeUrl: "apk",
     },
   ],
   technologies: {
@@ -203,6 +227,8 @@ export const DTRESUMEID = {
         "/static/img/b1.jpg",
         "/static/img/b2.jpg",
       ],
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "Politica",
@@ -225,6 +251,8 @@ export const DTRESUMEID = {
         "/static/img/p5.jpg",
         "/static/img/p6.jpg",
       ],
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "PWPL (Puspitaloka.com) – Freelance",
@@ -239,6 +267,8 @@ export const DTRESUMEID = {
       type: "video",
       img: "/static/img/pwpl.mp4",
       url: "https://puspitaloka.com/",
+      textBtn: "View Website",
+      typeUrl: "website",
     },
     {
       name: "NodeWave Front End - Freelance",
@@ -252,6 +282,24 @@ export const DTRESUMEID = {
       type: "carousel",
       img: ["/static/img/n1.jpg", "/static/img/n2.jpg"],
       url: "https://github.com/setiawan-utsman/nodewave",
+      textBtn: "View Website",
+      typeUrl: "website",
+    },
+    {
+      name: "M-Resume",
+      desc: "Saya memang belum memiliki pengalaman terjun langsung dalam proyek React Native secara profesional. Saat ini, aplikasi React Native yang saya kembangkan masih dalam tahap pengembangan. Saya juga memiliki ketertarikan untuk berkarier sebagai developer mobile dan sangat terbuka apabila ada kesempatan.",
+      tech: ["React Native", "React Native Paper", "Android Studio", "Axios"],
+      details: [
+        "Membuat routing untuk navigasi antar halaman",
+        "Mengimplementasikan desain dari Figma ke dalam React Native, sekaligus memastikan desain tetap dinamis dan responsif di berbagai perangkat Android",
+        "Mengintegrasikan aplikasi dengan REST API",
+        "Membuat menu navigasi bawah (bottom tab menu)",
+      ],
+      type: "video",
+      img: "/static/img/mobile.mp4",
+      textBtn: "Unduh APK",
+      url: "/static/apk/app-release.apk",
+      typeUrl: "apk",
     },
   ],
   technologies: {
