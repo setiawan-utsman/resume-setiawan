@@ -289,7 +289,6 @@ export default function ResumePage() {
           </div>
         </header>
         {/* ---- Content ---- */}
-
         {loading ? (
           <ResumeSekeleton />
         ) : (
