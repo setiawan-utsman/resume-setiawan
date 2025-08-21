@@ -434,8 +434,6 @@ export default function ResumePage() {
                       </div> */}
                       <div className="w-full aspect-video bg-cover rounded-xl flex-1 h-full relative group overflow-hidden">
                         <ImgVideo type={item?.type} image={item?.img} />
-
-                        {/* Hover effect */}
                         <div
                           className="absolute inset-0 bg-slate-800/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10 dark:bg-slate-800/60">
                           <div className="text-white hover:cursor-pointer" onClick={() => handleOpenModal(item)}><ZoomIcon /></div>
