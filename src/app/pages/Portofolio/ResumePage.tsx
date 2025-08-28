@@ -138,18 +138,18 @@ export default function ResumePage() {
   };
 
   const openNewTab = (url: any) => {
-    const _url = url?.url;
+    const _url = url?.url || url;
     const typeUrl = url?.typeUrl;
     if (_url) {
-      if (typeUrl === "website")
-        window.open(_url, "_blank", "noopener,noreferrer");
-      else {
-        const link = document.createElement("a");
+      if (typeUrl !== "website"){
+         const link = document.createElement("a");
         link.href = _url; // lokasi file di public/
         link.download = "m-resume.apk"; // nama file saat di-download
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+      } else {
+        window.open(_url, "_blank", "noopener,noreferrer");
       }
     } else {
       toast.error(t("error new tab"), {

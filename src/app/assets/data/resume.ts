@@ -175,7 +175,7 @@ export const DTRESUMEID = {
     email: "setiawanjob41@gmail.com",
     phone: "081316192203",
     github: "https://github.com/setiawan",
-    linkedin: "https://linkedin.com/in/yayuk-setiawan",
+    linkedin: "https://www.linkedin.com/in/yayuk-setiawan-95841124a",
     gitlab: "https://gitlab.com/setiawan",
   },
   profile:
