@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# 📱 Aplikasi Mobile Portofolio Setiawan
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi portofolio pribadi berbasis mobile yang dibangun menggunakan **React Native**, **Expo**, dan **NativeWind**.  
+Aplikasi ini menampilkan pengalaman profesional, keterampilan, serta proyek-proyek unggulan dengan tampilan modern, bersih, dan responsif.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Fitur
 
-### `npm start`
+- 🏗️ **Dibangun dari nol menggunakan React Native**  
+  Mengembangkan aplikasi portofolio mobile dengan struktur yang scalable dan mudah dikembangkan.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 🎨 **Konversi Figma ke UI menggunakan NativeWind**  
+  Mengubah desain dari Figma menjadi tampilan mobile yang konsisten dan responsif di berbagai perangkat.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 🔗 **Integrasi REST API secara real-time**  
+  Mendukung pembaruan konten secara dinamis dan efisien langsung dari server.
 
-### `npm test`
+- ♻️ **Clean Code & Komponen Reusable**  
+  Menggunakan arsitektur yang rapi, mudah di-maintain, dan siap untuk pengembangan jangka panjang.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Teknologi yang Digunakan
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React Native (Expo)**
+- **TypeScript**
+- **NativeWind (Tailwind CSS untuk React Native)**
+- **REST API**
+- **React Navigation**
+- **Axios**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Instalasi & Setup
 
-### `npm run eject`
+Ikuti langkah-langkah berikut untuk menjalankan aplikasi secara lokal.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **1. Prasyarat**
+Pastikan Anda sudah menginstal:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Node.js (disarankan versi LTS)
+- Git
+- Expo CLI  
+  ```sh
+  npm install -g expo-cli
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **2.Clone Repository**
+```bash
+git clone https://github.com/setiawan-utsman/resume-setiawan.git
+```
+Masuk ke folder proyek:
+```bash
+cd resume-setiawan
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### **3.Instal Dependensi***
+NPM
+```bash
+npm install
+```
+yarn
+```bash
+yarn install
+```
+### **4.Menjalankan Development Server**
+NPM
+```bash
+npm start
+```
+atau:
+```bash
+expo start
+```
 
-## Learn More
+### **5.Menjalankan Aplikasi**
+Di Android (Expo Go)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Scan QR code menggunakan aplikasi Expo Go.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Di iOS (Expo Go)
+
+Buka aplikasi kamera → Scan QR code → Open in Expo Go.
+
+Di Emulator Android
+```bash
+npm run android
+```
+
+### **🛠️ Build untuk Production**
+Build APK / AAB Android
+```bash
+expo build:android
+```
+Build iOS (butuh macOS)
+```bash
+expo build:ios
+```
+
