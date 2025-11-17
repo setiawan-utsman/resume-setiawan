@@ -17,6 +17,7 @@ import { TextEffect } from "../../motion/text-effect";
 import { AnimatePresence } from "motion/dist/react";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import ZoomIcon from "../../assets/icons/ZoomIcon";
+import { useNavigate } from "react-router-dom";
 // import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
 // import { AnimatedBackground } from "@/components/core/animated-background";
 
@@ -79,6 +80,7 @@ export interface Language {
 }
 
 export default function ResumePage() {
+  const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   const [datas, setDatas] = useState<IDatas>(DTRESUMEID);
   const [openModal, setOpenModal] = useState<any>({ isOpen: false });
@@ -98,7 +100,6 @@ export default function ResumePage() {
   ];
 
   const handleOpenModal = (data:any) => {
-    console.log(data, 'fijsdigfsidfhgsdf');
     setOpenModal({ isOpen: true, data: data });
   };
 
@@ -199,8 +200,11 @@ export default function ResumePage() {
           }`}
         >
           <div className="max-w-[960px] w-full 2xl:container container md:container sm:container mx-auto flex items-center justify-between whitespace-nowrap md:px-0 xs:px-5 py-3 relative">
-            <div className="flex items-center gap-2 hover:cursor-pointer hover:text-cyan-600">
-              <div className=" rounded-lg p-0.5 border-1 border-cyan-400 bg-cyan-50 text-cyan-600 skew-y-3 dark:bg-cyan-400 dark:text-cyan-900">
+            <div
+              className="flex items-center gap-2 hover:cursor-pointer hover:text-cyan-600"
+              onClick={() => navigate("/portal")}
+            >
+              <div className="rounded-lg p-0.5 border-1 border-cyan-400 bg-cyan-50 text-cyan-600 skew-y-3 dark:bg-cyan-400 dark:text-cyan-900">
                 <LogoIcon />
               </div>
               <div className="text-xl font-semibold font-serif">Portofolio</div>
@@ -352,7 +356,7 @@ export default function ResumePage() {
                         {datas?.experience?.work}
                       </p>
                       <p className="text-[#49749c] text-sm font-normal leading-normal dark:text-[#83baed]">
-                        Jan 2018 – Present
+                        {datas?.experience?.period}
                       </p>
                     </div>
 
@@ -434,9 +438,13 @@ export default function ResumePage() {
                       </div> */}
                       <div className="w-full aspect-video bg-cover rounded-xl flex-1 h-full relative group overflow-hidden">
                         <ImgVideo type={item?.type} image={item?.img} />
-                        <div
-                          className="absolute inset-0 bg-slate-800/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10 dark:bg-slate-800/60">
-                          <div className="text-white hover:cursor-pointer" onClick={() => handleOpenModal(item)}><ZoomIcon /></div>
+                        <div className="absolute inset-0 bg-slate-800/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out z-10 dark:bg-slate-800/60">
+                          <div
+                            className="text-white hover:cursor-pointer"
+                            onClick={() => handleOpenModal(item)}
+                          >
+                            <ZoomIcon />
+                          </div>
                         </div>
                       </div>
                     </React.Fragment>
@@ -473,12 +481,12 @@ export default function ResumePage() {
                   <h3 className="text-lg font-bold leading-tight tracking-[-0.015em] mb-1">
                     {t("Framework")}
                   </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-8 gap-2">
+                  <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
                     {datas?.technologies?.frameworks?.map(
                       (item: any, index: number) => (
                         <div
                           key={index}
-                          className="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
+                          className="flex text-center h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#eaedf1] pl-4 pr-4 dark:bg-slate-700"
                         >
                           <p className="text-sm font-medium leading-3">
                             {item}
