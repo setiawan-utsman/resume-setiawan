@@ -1,59 +1,111 @@
+// ========================================
+// RESUME DATA CONFIGURATION (ENGLISH)
+// ========================================
+
 export const DTRESUMEEN = {
+  // ========================================
+  // PERSONAL INFORMATION
+  // ========================================
   name: "Yayuk Setiawan",
-  title: "Frontend Developer (React & Angular)",
+  title: "Frontend Developer",
+
   contact: {
     address: "JL. Kesehatan 04/011, Kel. Gedong, Kec. Pasar Rebo, East Jakarta",
     email: "setiawanjob41@gmail.com",
     phone: "081316192203",
     github: "https://github.com/setiawan-utsman?tab=repositories",
     linkedin: "https://linkedin.com/in/yayuk-setiawan-95841124a",
-    gitlab: "https://gitlab.com/setiawan",
+    gitlab: "https://gitlab.com/setiawan_41",
   },
+
+  // Resume Links
+  resume: {
+    id: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/resume-id/Resume_Id.pdf",
+    en: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/resume-en/Resume_EN.pdf",
+  },
+
+  // ========================================
+  // PROFILE SUMMARY
+  // ========================================
   profile:
-    "Frontend Developer experienced in React, React Native, Angular, and TypeScript. Skilled in building responsive user interfaces, managing application state, and integrating RESTful APIs. Proficient in Bootstrap, Tailwind CSS, and Styled Components to deliver consistent and maintainable designs.",
+    "Frontend Developer with experience in building applications using React, Next.js, React Native, and Angular. Skilled in creating responsive user interfaces, managing application state, and integrating RESTful APIs. Proficient in Tailwind CSS and Bootstrap, with experience in implementing Server-Side Rendering (SSR) and SEO optimization in Next.js to enhance performance and user experience.",
+
+  // ========================================
+  // EDUCATION
+  // ========================================
   education: {
     university: "Universitas Indraprasta PGRI",
-    degree: "Bachelor of Computer Engineering",
+    degree: "Bachelor of Informatics Engineering",
     location: "Jakarta",
     year: "2014 – 2018",
     gpa: "3.3 / 4.0",
   },
+
+  // ========================================
+  // WORK EXPERIENCE
+  // ========================================
   experience: {
     position: "Frontend Engineer",
-    company: "PT. EBDESK Teknologi",
+    company: "PT. Ebdesk Teknologi",
     work: "Big Data Company",
     period: "2018 – 2025",
     responsibilities: [
-      "Building new projects",
-      "UI/UX design",
-      "API-based services",
-      "Collaborating with cross-functional teams",
-      "Optimizing SEO (Search Engine Optimization) in applications",
+      "Building new projects from scratch",
+      "UI/UX design implementation",
+      "RESTful API integration and services",
+      "Cross-functional team collaboration",
+      "SEO (Search Engine Optimization) implementation",
       "API proxy configuration",
       "Data parsing and mapping",
-      "Bug fixing and maintenance",
+      "Development, maintenance, and bug fixing",
       "Data visualization and analytics",
-      "State Management (Redux, React Query, Zustand etc.)",
+      "State management (Redux, React Query, Zustand)",
     ],
   },
+
+  // ========================================
+  // PROJECTS
+  // ========================================
   projects: [
+    // Data Analysis Portal
+    {
+      name: "Data Analysis Portal",
+      desc: "Interactive dashboard for visualizing environmental and urban infrastructure data with dynamic maps and user-based reporting features.",
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Motion Primitives",
+        "Shadcn",
+        "Axios",
+        "React Hook",
+      ],
+      details: [
+        "Tree Analysis: Distribution and health monitoring with barcode system",
+        "Landfill (TPA) Analysis: Waste volume tracking and public reporting system",
+        "Recharge Well Analysis: Water absorption well monitoring with interactive maps",
+      ],
+      type: "image",
+      img: ["/static/img/portal-analisis.png"],
+      textBtn: "View Project",
+      typeUrl: "website",
+    },
+
+    // Brandlabs
     {
       name: "Brandlabs",
-      tech: ["React", "ECharts", "Mapbox", "Bootstrap", "Axios"],
+      tech: ["React", "ECharts", "Mapbox", "Bootstrap", "Axios", "SCSS"],
       details: [
-        "Implemented map visualization using Mapbox.",
-        "Developed data visualization using ECharts.",
-        "Integrated REST API for data fetching and submission.",
-        "Implemented Bearer Token JWT for authentication and authorization.",
-        "Added dark and light theme modes using Bootstrap.",
-        "Integrated Brandlabs AI Assistance to enhance user interaction.",
-        "Implemented form validation using React Hook Form.",
-        "Created skeleton loaders for loading and no data states.",
-        "Collaborated with cross-functional stakeholders to align requirements.",
-        "Performed regular maintenance and bug fixing to ensure application stability.",
-        "Deployed applications via CI/CD pipeline.",
-        "Structured application components neatly for easier management and development.",
-        "Configured Webpack.",
+        "Built analytical dashboard with interactive data visualization (ECharts and Mapbox)",
+        "Integrated REST API with efficient and secure data flow",
+        "Implemented dark/light mode to enhance UX",
+        "Integrated Brandlabs AI Assistance for automatic insights",
+        "Form validation using React Hook Form",
+        "Implemented skeleton loaders for smooth loading experience",
+        "Collaborated with design, backend, and data teams",
+        "Regular maintenance, debugging, and bug fixing",
+        "Deployment using CI/CD pipeline",
+        "Organized modular and scalable React component structure",
+        "Webpack configuration for build optimization",
       ],
       type: "carousel",
       img: [
@@ -64,17 +116,19 @@ export const DTRESUMEEN = {
       textBtn: "View Website",
       typeUrl: "website",
     },
+
+    // Politica
     {
       name: "Politica",
-      tech: ["Angular", "Highcharts", "Bootstrap", "HttpClient"],
+      tech: ["Angular", "Highcharts", "Bootstrap", "HttpClient", "SCSS"],
       details: [
-        "Developed and integrated RESTful API for frontend-backend data communication.",
-        "Implemented form input validation using ReactiveForms with FormGroup to ensure correct data format.",
-        "Created interactive data visualizations using Highcharts (bar chart, pie chart, and maps).",
-        "Implemented Bearer Token Authentication for secure API access.",
-        "Built responsive designs using Bootstrap for optimal display on various devices.",
-        "Integrated ng-bootstrap Datepicker for data filtering by time range.",
-        "Developed dark and light theme features to allow users to customize their display preferences.",
+        "RESTful API integration for frontend-backend communication",
+        "Form validation with Reactive Forms and FormGroup",
+        "Interactive data visualization using Highcharts (bar, pie, and map charts)",
+        "Bearer Token Authentication implementation",
+        "Responsive design with Bootstrap",
+        "Integrated ng-bootstrap Datepicker for date range filtering",
+        "Implemented Dark/Light Theme switching",
       ],
       type: "carousel",
       img: [
@@ -88,15 +142,17 @@ export const DTRESUMEEN = {
       textBtn: "View Website",
       typeUrl: "website",
     },
+
+    // PWPL (Puspitaloka.com)
     {
       name: "PWPL (Puspitaloka.com) – Freelance",
-      tech: ["Angular", "Bootstrap", "HttpClient"],
+      tech: ["Angular", "Bootstrap", "HttpClient", "SCSS"],
       details: [
-        "Developed a responsive header menu that adapts to different screen sizes and devices.",
-        "Added typing text animation to enhance interactivity and visual appeal.",
-        "Developed an admin panel to manage advertisements, banners, and promotional content.",
-        "Built a CMS for property listings and marketing materials.",
-        "Implemented account management features.",
+        "Built responsive header menu for various devices",
+        "Implemented typing animation for interactive UI",
+        "Developed admin panel for promotional content management",
+        "Built property CMS for real estate listing management",
+        "Implemented user account management with multi-role access",
       ],
       type: "video",
       img: "/static/img/pwpl.mp4",
@@ -104,44 +160,113 @@ export const DTRESUMEEN = {
       textBtn: "View Website",
       typeUrl: "website",
     },
+
+    // M-Resume
     {
       name: "M-Resume",
-      desc: "I don’t yet have direct professional experience in React Native projects. Currently, the React Native application I am developing is still in progress. I am also highly interested in pursuing a career as a mobile developer and am very open to any opportunities.",
-      tech: ["React Native", "React Native Paper", "Android Studio", "Axios"],
+      desc: "Personal mobile portfolio application built with React Native featuring responsive design and API integration for dynamic data.",
+      tech: ["React Native", "NativeWind", "Axios"],
       details: [
-        "Implementing routing for page navigation",
-        "Translating designs from Figma into React Native while ensuring the design remains dynamic and responsive across various Android devices",
-        "Integrating the application with REST API",
-        "Building a bottom tab navigation menu",
+        "Built mobile portfolio application from scratch",
+        "Converted Figma designs to responsive UI using NativeWind",
+        "Integrated REST API for real-time data management",
+        "Applied clean code principles and reusable components",
+        "Scalable and maintainable application structure",
       ],
       type: "video",
       img: "/static/img/mobile.mp4",
       textBtn: "Download APK",
-      url: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/m-resume/app-release.apk",
+      url: "https://resume-setiawan.vercel.app/static/apk/app-release.apk",
       typeUrl: "apk",
     },
+
+    // User Authentication API
+    {
+      name: "User Authentication API",
+      desc: "Backend API project using FastAPI focused on implementing authentication, authorization, and user management systems with JWT token security.",
+      tech: ["Python", "FastAPI", "JWT", "Pydantic"],
+      details: [
+        "Built authentication endpoints (login and registration)",
+        "Implemented JWT token validation",
+        "User ID verification system for data security",
+        "Error handling with HTTPException",
+        "Implemented activity logging for tracking",
+        "Dependency management using FastAPI Depends",
+      ],
+      type: "code",
+      img: "/static/img/backend-api.png",
+      textBtn: "View Repository",
+      url: "https://github.com/setiawan-utsman/user-auth-api",
+      typeUrl: "github",
+    },
+
+    // Jobseeker App
+    {
+      name: "Jobseeker App",
+      desc: "Web application that helps users find job vacancies based on categories and skills using Supabase as database and authentication service.",
+      tech: ["Next.js", "Tailwind CSS", "Supabase", "React Hook Form", "Axios"],
+      details: [
+        "User authentication system using Supabase",
+        "Full CRUD implementation for job vacancy data",
+        "Filter system based on position, location, and job type",
+        "Form validation with React Hook Form",
+        "Responsive UI design using Tailwind CSS",
+        "API integration for dynamic data",
+      ],
+      type: "carousel",
+      img: [
+        "/static/img/jobseeker1.jpg",
+        "/static/img/jobseeker2.jpg",
+        "/static/img/jobseeker3.jpg",
+      ],
+      url: "https://supabase-jobsekeer.vercel.app/",
+      typeUrl: "website",
+      textBtn: "Visit Website",
+    },
   ],
+
+  // ========================================
+  // TECHNICAL SKILLS
+  // ========================================
   technologies: {
-    languages: ["JavaScript", "TypeScript", "HTML", "SCSS"],
+    languages: ["JavaScript", "TypeScript", "HTML", "SCSS", "Python"],
     frameworks: [
       "React",
-      "React Native",
       "Angular",
-      "Bootstrap",
+      "Next.js",
+      "React Native",
+      "Redux",
+      "React Hooks",
       "Tailwind CSS",
+      "Bootstrap",
+      "Motion Primitives",
+      "Shadcn",
+      "Zustand",
+      "TanStack Query",
     ],
+    dataVisualization: ["ECharts", "Highcharts", "Mapbox"],
     tools: [
       "Git",
       "GitHub",
       "GitLab",
-      "VS Code",
+      "VSCode",
       "Postman",
+      "Android Studio",
+      "Axios",
       "Figma",
-      "Mapbox",
-      "Highcharts",
-      "ECharts",
+    ],
+    other: [
+      "Responsive Design",
+      "Dark/Light Mode",
+      "REST API Integration",
+      "WebSocket",
+      "SSE",
     ],
   },
+
+  // ========================================
+  // LANGUAGES
+  // ========================================
   languages: [
     {
       language: "Indonesian",
@@ -164,9 +289,13 @@ export const DTRESUMEID = {
   // ========================================
   name: "Yayuk Setiawan",
   title: "Frontend Developer",
-  
+  resume: {
+    id: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/resume-id/Resume_Id.pdf",
+    en: "https://github.com/setiawan-utsman/resume-setiawan/releases/download/resume-en/Resume_EN.pdf",
+  },
   contact: {
-    address: "JL. Kesehatan 04/011, Kel. Gedong, Kec. Pasar Rebo, Jakarta Timur",
+    address:
+      "JL. Kesehatan 04/011, Kel. Gedong, Kec. Pasar Rebo, Jakarta Timur",
     email: "setiawanjob41@gmail.com",
     phone: "081316192203",
     github: "https://github.com/setiawan-utsman?tab=repositories",
@@ -221,16 +350,21 @@ export const DTRESUMEID = {
     {
       name: "Portal Analisis Data",
       desc: "Dashboard interaktif untuk memvisualisasikan data lingkungan dan infrastruktur kota dengan peta dinamis dan fitur pelaporan berbasis pengguna.",
-      tech: ["Next.js", "Tailwind CSS", "Motion Primitives", "Shadcn", "Axios", "React Hook"],
+      tech: [
+        "Next.js",
+        "Tailwind CSS",
+        "Motion Primitives",
+        "Shadcn",
+        "Axios",
+        "React Hook",
+      ],
       details: [
         "Analisis Pohon: Monitoring sebaran dan kesehatan pohon dengan sistem barcode",
         "Analisis TPA: Tracking volume sampah dan sistem pelaporan publik",
         "Analisis Sumur Resapan: Monitoring kondisi sumur resapan dengan peta interaktif",
       ],
       type: "image",
-      img: [
-        "/static/img/portal-analisis.png",
-      ],
+      img: ["/static/img/portal-analisis.png"],
       textBtn: "View Project",
       typeUrl: "website",
     },
@@ -389,11 +523,7 @@ export const DTRESUMEID = {
       "Zustand",
       "TanStack Query",
     ],
-    dataVisualization: [
-      "ECharts",
-      "Highcharts",
-      "Mapbox",
-    ],
+    dataVisualization: ["ECharts", "Highcharts", "Mapbox"],
     tools: [
       "Git",
       "GitHub",
@@ -462,7 +592,6 @@ export const PORTAL = {
   ],
 };
 
-
 export const EXPLORER = {
   about: {
     title: "Analisis Data Geospasial dengan Mapbox",
@@ -492,5 +621,161 @@ export const EXPLORER = {
           "Mengelompokkan banyak titik data menjadi cluster agar peta lebih rapi dan interaktif. Memudahkan analisis area dengan kepadatan data tinggi.",
       },
     ],
+  },
+};
+
+export const PROJECT = {
+  title: "Portfolio Proyek",
+  description:
+    "Kumpulan proyek yang telah saya kerjakan, mencakup aplikasi web, mobile, dan backend API dengan berbagai teknologi modern",
+  contact:
+    "https://wa.me/6281316192203?text=Halo%20Setiawan,%20Saya%20ingin%20menghubungi%20Anda",
+  totalProjects: 7,
+  items: [
+    {
+      id: 1,
+      title: "Portal Analisis Data",
+      description:
+        "Dashboard interaktif untuk memvisualisasikan data lingkungan dan infrastruktur kota dengan peta dinamis dan fitur pelaporan berbasis pengguna",
+      category: "Web Application",
+      type: "Personal Project",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Motion Primitives",
+        "Shadcn",
+        "Axios",
+        "React Hook",
+      ],
+      features: [
+        "Analisis Pohon dengan sistem barcode",
+        "Analisis TPA untuk tracking volume sampah",
+        "Analisis Sumur Resapan dengan peta interaktif",
+      ],
+    },
+    {
+      id: 2,
+      title: "Brandlabs",
+      description:
+        "Dashboard analitik dengan visualisasi data interaktif menggunakan peta dan grafik untuk analisis big data",
+      category: "Web Application",
+      type: "Company Project",
+      technologies: [
+        "React",
+        "ECharts",
+        "Mapbox",
+        "Bootstrap",
+        "Axios",
+        "SCSS",
+      ],
+      features: [
+        "Visualisasi peta dengan Mapbox (point, cluster, polygon)",
+        "Grafik interaktif dengan ECharts",
+        "Dark/Light mode",
+        "AI Assistance integration",
+        "CI/CD deployment",
+      ],
+    },
+    {
+      id: 3,
+      title: "Politica",
+      description:
+        "Aplikasi web untuk analisis data politik dengan visualisasi grafik dan peta interaktif",
+      category: "Web Application",
+      type: "Company Project",
+      technologies: [
+        "Angular",
+        "Highcharts",
+        "Bootstrap",
+        "HttpClient",
+        "SCSS",
+      ],
+      features: [
+        "Visualisasi data dengan Highcharts",
+        "Bearer Token Authentication",
+        "Responsive design",
+        "Date range filtering",
+        "Dark/Light theme",
+      ],
+    },
+    {
+      id: 4,
+      title: "PWPL (Puspitaloka.com)",
+      description:
+        "Website real estate dengan CMS untuk manajemen properti dan konten marketing",
+      category: "Web Application",
+      type: "Freelance",
+      technologies: ["Angular", "Bootstrap", "HttpClient", "SCSS"],
+      features: [
+        "Responsive header menu",
+        "Typing animation",
+        "Admin panel untuk konten",
+        "Property CMS",
+        "Multi-role user management",
+      ],
+      url: "https://puspitaloka.com",
+    },
+    {
+      id: 5,
+      title: "M-Resume",
+      description:
+        "Aplikasi mobile portofolio pribadi dengan desain responsif dan integrasi API untuk data dinamis",
+      category: "Mobile Application",
+      type: "Personal Project",
+      technologies: ["React Native", "NativeWind", "Axios"],
+      features: [
+        "Konversi desain Figma ke UI",
+        "REST API integration",
+        "Clean code architecture",
+        "Reusable components",
+      ],
+      url: "https://resume-setiawan.vercel.app",
+    },
+    {
+      id: 6,
+      title: "User Authentication API",
+      description:
+        "Backend API untuk sistem autentikasi dan otorisasi pengguna dengan keamanan JWT token",
+      category: "Backend API",
+      type: "Learning Project",
+      technologies: ["Python", "FastAPI", "JWT", "Pydantic"],
+      features: [
+        "Login & registration endpoints",
+        "JWT token validation",
+        "User ID verification",
+        "Error handling dengan HTTPException",
+        "Activity logging",
+      ],
+    },
+    {
+      id: 7,
+      title: "Jobseeker App",
+      description:
+        "Platform pencarian lowongan kerja dengan fitur filtering dan sistem autentikasi menggunakan Supabase",
+      category: "Web Application",
+      type: "Personal Project",
+      technologies: [
+        "Next.js",
+        "Tailwind CSS",
+        "Supabase",
+        "React Hook Form",
+        "Axios",
+      ],
+      features: [
+        "User authentication dengan Supabase",
+        "CRUD lowongan kerja",
+        "Filter posisi, lokasi, dan tipe kerja",
+        "Form validation",
+        "Responsive design",
+      ],
+      url: "https://supabase-jobsekeer.vercel.app",
+    },
+  ],
+  statistics: {
+    webApplications: 5,
+    mobileApplications: 1,
+    backendAPIs: 1,
+    totalTechnologies: 20,
+    mostUsedTech: ["React", "Next.js", "Angular", "Tailwind CSS", "Bootstrap"],
   },
 };

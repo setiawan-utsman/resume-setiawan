@@ -19,7 +19,7 @@ export default function AppRouting() {
       <Route path="portal" element={<PortalPage />} />
       <Route path="resume" element={<ResumePage />} />
       <Route path="map/*" element={<ExplorerRouting />} />
-      {/* <Route path='project' element={<ProjectPage />} /> */}
+      <Route path='project' element={<ProjectPage />} />
       <Route path="*" element={<PageNotFound />} />
       <Route index element={<Navigate to="/portal" />} />
     </Routes>
