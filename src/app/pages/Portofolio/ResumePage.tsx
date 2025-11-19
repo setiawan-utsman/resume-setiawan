@@ -18,6 +18,7 @@ import { AnimatePresence } from "motion/dist/react";
 import { Slide, toast, ToastContainer } from "react-toastify";
 import ZoomIcon from "../../assets/icons/ZoomIcon";
 import { useNavigate } from "react-router-dom";
+import FooterCopyright from "../../components/FooterCopyright";
 // import { AnimatedBackground } from "@/components/motion-primitives/animated-background";
 // import { AnimatedBackground } from "@/components/core/animated-background";
 
@@ -607,16 +608,7 @@ export default function ResumePage() {
             </div>
           </div>
         )}
-        {/* <div className="px-40 flex flex-1 justify-center py-5"> */}
-
-        <footer className="flex justify-center">
-          <div className=" max-w-[960px] mx-auto px-5 py-10">
-            <p className="text-[#49749c] text-base font-normal leading-normal">
-              © 2025 Yayuk Setiawan. All rights reserved.
-            </p>
-          </div>
-        </footer>
-        {/* </div> */}
+        <FooterCopyright />
         {/* ---- End Content ---- */}
       </div>
 

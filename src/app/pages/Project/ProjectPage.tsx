@@ -3,6 +3,8 @@ import { PROJECT } from '../../assets/data/resume';
 import { Card } from '../../components/Card/card';
 import ButtonBackTop from '../../components/ButtonBackTop';
 import ButtonBack from '../../components/ButtonBack';
+import FooterCopyright from '../../components/FooterCopyright';
+import { SkeletonCard } from './SkeletonCard';
 
 export default function ProjectPage() {
   return (
@@ -35,18 +37,29 @@ export default function ProjectPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {PROJECT?.items?.map((item, index) => (
-              <Card key={index} className="w-full space-y-4 p-0">
-                <div className="w-full h-[200px]">
+              <Card key={index} className="w-full space-y-4 p-0 hover:shadow-lg hover:translate-y-[-10px] transition-all duration-300">
+                <div className="w-full h-[210px]">
                   <img
                     className="w-full h-full object-cover rounded-t-lg"
-                    src="/static/img/project/simaspro.png"
+                    src={
+                      item.image || "/static/img/illustration-characters.avif"
+                    }
                     alt=""
                   />
                 </div>
                 <div className="space-y-2 px-4 pb-4">
-                  <div className="font-bold text-base capitalize">
-                    {item.title}
+                  <div className="flex items-center justify-between w-full">
+                    <div className="font-bold text-base capitalize">
+                      {item.title}
+                    </div>
+                    <Card
+                      className="bg-gray-600/10 capitalize text-xs px-2 py-1 font-semibold rounded-2xl"
+                      key={index}
+                    >
+                      {item.type}
+                    </Card>
                   </div>
+
                   <div className="text-sm leading-5 text-gray-600">
                     {item.description}
                   </div>
@@ -55,7 +68,7 @@ export default function ProjectPage() {
                     <div className="flex flex-col">
                       <div className="text-sm font-bold">Kategori</div>
                       <div className="text-sm text-gray-600">
-                        Web Application
+                        {item.category}
                       </div>
                     </div>
                     <div className="flex flex-col">
@@ -80,9 +93,11 @@ export default function ProjectPage() {
                 </div>
               </Card>
             ))}
+            <SkeletonCard />
           </div>
         </section>
       </div>
+      <FooterCopyright />
       <ButtonBack />
     </>
   );

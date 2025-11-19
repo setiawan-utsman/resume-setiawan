@@ -474,7 +474,7 @@ export const DTRESUMEID = {
       ],
       type: "code",
       img: "/static/img/backend-api.png",
-      textBtn: "View Repository",
+      textBtn: "Lihat Repository",
       url: "https://github.com/setiawan-utsman/user-auth-api",
       typeUrl: "github",
     },
@@ -494,13 +494,12 @@ export const DTRESUMEID = {
       ],
       type: "carousel",
       img: [
-        "/static/img/jobseeker1.jpg",
-        "/static/img/jobseeker2.jpg",
-        "/static/img/jobseeker3.jpg",
+        "/static/img/project/jobseeker1.png",
+        "/static/img/project/jobseeker2.png",
       ],
       url: "https://supabase-jobsekeer.vercel.app/",
       typeUrl: "website",
-      textBtn: "Visit Website",
+      textBtn: "Lihat Website",
     },
   ],
 
@@ -660,6 +659,7 @@ export const PROJECT = {
         "Dashboard analitik dengan visualisasi data interaktif menggunakan peta dan grafik untuk analisis big data",
       category: "Web Application",
       type: "Company Project",
+      image: "/static/img/brandlabs.png",
       technologies: [
         "React",
         "ECharts",
@@ -683,6 +683,7 @@ export const PROJECT = {
         "Aplikasi web untuk analisis data politik dengan visualisasi grafik dan peta interaktif",
       category: "Web Application",
       type: "Company Project",
+      image: "/static/img/p1.jpg",
       technologies: [
         "Angular",
         "Highcharts",
@@ -754,6 +755,7 @@ export const PROJECT = {
         "Platform pencarian lowongan kerja dengan fitur filtering dan sistem autentikasi menggunakan Supabase",
       category: "Web Application",
       type: "Personal Project",
+      image: "/static/img/project/jobseeker1.png",
       technologies: [
         "Next.js",
         "Tailwind CSS",
@@ -769,6 +771,22 @@ export const PROJECT = {
         "Responsive design",
       ],
       url: "https://supabase-jobsekeer.vercel.app",
+    },
+    {
+      id: 8,
+      title: "Intelligence Massive Profiling",
+      description:
+        "Mengembangkan sistem pemantauan untuk profil karyawan berdasarkan jejak digital mereka di internet, yang memungkinkan analisis demografi, psikografis, dan kepribadian.",
+      category: "Web Application",
+      type: "company project",
+      technologies: ["Angular", "Bootstrap", "HttpClient", "SCSS"],
+      features: [
+        "Pemetaan interaktif menggunakan Mapbox",
+        "Filter wilayah untuk analisis data yang lebih spesifik",
+        "Halaman detail profil yang informatif dan terstruktur",
+        "Network profiling untuk melihat hubungan dan konektivitas profil",
+      ],
+      url: "https://puspitaloka.com",
     },
   ],
   statistics: {

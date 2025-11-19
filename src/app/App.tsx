@@ -5,6 +5,8 @@ const AppRouting = React.lazy(() => import("./AppRouting"));
 const ResumePage = React.lazy(() => import("./pages/Portofolio/ResumePage"));
 
 function App() {
+    window.scrollTo({ top: 0, behavior: "smooth" });    
+
   return (
     <Router>
       <Routes>
