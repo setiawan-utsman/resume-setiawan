@@ -15,10 +15,10 @@ const regions = [
 ];
   return (
     <div className="relative min-h-screen py-5 flex justify-center items-center">
-      <div className="container mx-auto w-full xl:max-w-[1280px] lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[421px]">
+      <div className="container mx-auto w-full xl:max-w-[1280px] lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[350px]">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-3 max-w-[72rem] justify-center items-center mx-auto">
-            <p className="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight">
+            <p className="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight xs:text-center">
               {PORTAL?.portal_page?.title}
             </p>
             <p className="text-[#49709c] text-sm font-normal leading-normal text-center">

@@ -25,6 +25,7 @@ export interface IDatas {
   name: string;
   title: string;
   contact: Contact;
+  resume:any;
   profile: string;
   education: Education;
   experience: Experience;
@@ -143,7 +144,7 @@ export default function ResumePage() {
     const typeUrl = url?.typeUrl;
     if (_url) {
       if (typeUrl !== "website"){
-         const link = document.createElement("a");
+        const link = document.createElement("a");
         link.href = _url; // lokasi file di public/
         link.download = "m-resume.apk"; // nama file saat di-download
         document.body.appendChild(link);
@@ -159,6 +160,15 @@ export default function ResumePage() {
         autoClose: 2000,
       });
     }
+  };
+
+  const downloadFile = (url: any) => {
+    const link = document.createElement("a");
+    link.href = url; // lokasi file di public/
+    link.download = "resume.pdf"; // nama file saat di-download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   useEffect(() => {
@@ -239,7 +249,10 @@ export default function ResumePage() {
                 </AnimatedBackground>
               </div>
               <div className="flex items-center gap-2">
-                <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-2 bg-[#eaedf1] text-[#101518] text-sm font-bold leading-normal tracking-[0.015em]">
+                <button
+                  className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-2 bg-[#eaedf1] text-[#101518] text-sm font-bold leading-normal tracking-[0.015em]"
+                  onClick={() => downloadFile(datas?.resume?.[i18n.language])}
+                >
                   <span className="truncate">Resume</span>
                 </button>
                 <div
@@ -295,7 +308,7 @@ export default function ResumePage() {
         {loading ? (
           <ResumeSekeleton />
         ) : (
-          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[350px] mb-5">
+          <div className="container mx-auto w-full lg:max-w-[976px] md:max-w-[768px] sm:max-w-[480px] xs:max-w-[380px] mb-5">
             <div className="flex flex-col">
               <section
                 id="About"

@@ -1,6 +1,6 @@
 import { cn } from "../../../utils";
 
-function Card({ className, children }: React.ComponentProps<"div">) {
+function Card({ className, children, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card"
@@ -8,7 +8,7 @@ function Card({ className, children }: React.ComponentProps<"div">) {
         "rounded-lg border shadow-sm h-full p-3 border-gray-200/50",
         className
       )}
-      //   {...props}
+        {...props}
     >
       {children}
     </div>
