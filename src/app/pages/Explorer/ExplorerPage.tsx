@@ -31,7 +31,7 @@ export default function ExplorerPage() {
               </p>
               <button
                 className="bg-red-600/50 text-white font-bold py-3 px-6 rounded-lg text-base hover:bg-primary/90 transition-colors"
-                onClick={() => window.open("playground", "_blank", "noopener,noreferrer")}
+                onClick={() => window.open("/map/playground", "_blank", "noopener,noreferrer")}
               >
                 Explore Features
               </button>
